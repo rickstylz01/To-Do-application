@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT||3000;
+const indexRoute = require('./routes/todoRoutes');
 
 // =======================================================
 //  MONGO DB CONNECTION
@@ -29,7 +30,7 @@ app.set('view engine', 'html');
 // =======================================================
 //  ROUTES
 // =======================================================
-
+app.use(indexRoute);
 
 
 
