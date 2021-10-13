@@ -1,6 +1,4 @@
-const express = require('express');
 const Todo = require('../models/todoSchema');
-const {stringify} = require("nodemon/lib/utils");
 
 
 // Fetches all tasks
@@ -20,20 +18,20 @@ exports.fetchTasks = async (req, res) => {
 // Creates a new task
 exports.createNewTask = async (req, res) => {
   try {
-    const task = await req.body;
-    // console.log(`This is the req.body ===> ${task}`)
+    console.log(req.body);
+    const {todo} = req.body;
     const newTodo = await new Todo({
-      task
+      todo
     });
 
-    if (task === "") {
+    if (todo === "") {
       res.redirect('/todos');
     }
 
-    await newTodo.save();
-    await res.redirect('/todos')
+    await newTodo.save()
+    console.log(`This is the newly saved task ===> ${newTodo}`);
+    res.redirect('/todos');
   } catch (err) {
     console.log(err);
-    return res.json({message: err});
   }
 }

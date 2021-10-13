@@ -30,6 +30,12 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 // =======================================================
+//  MIDDLEWARE
+// =======================================================
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// =======================================================
 //  ROUTES
 // =======================================================
 app.use(indexRoute);
