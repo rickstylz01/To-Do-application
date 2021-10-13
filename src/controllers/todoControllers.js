@@ -9,7 +9,6 @@ exports.fetchTasks = async (req, res) => {
       console.log('There are no tasks to complete.');
     }
     res.render('index.ejs', {todos: tasks});
-    // console.log({todos: tasks});
   } catch (err) {
     return res.json({message: err});
   }
