@@ -34,3 +34,15 @@ exports.createNewTask = async (req, res) => {
     console.log(err);
   }
 }
+
+// Delete a task
+exports.deleteTask = async (req, res) => {
+  try{
+    const {_id} = req.params;
+
+    let task = await Todo.find({_id});
+    console.log(task);
+  } catch (err) {
+    console.log(err);
+  }
+}
