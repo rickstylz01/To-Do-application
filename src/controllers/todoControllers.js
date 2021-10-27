@@ -39,9 +39,21 @@ exports.createNewTask = async (req, res) => {
 exports.deleteTask = async (req, res) => {
   try{
     const {_id} = req.params;
+    //TODO: find a way to log out the actual task that has been deleted.
+    await Todo.deleteOne({_id});
+    console.log(`Task has been deleted`);
+    res.redirect('/todos');
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-    let task = await Todo.find({_id});
-    console.log(task);
+exports.updateTask = async (req, res) => {
+  try {
+    let taskToUpdate = Todo.find({_id: req.params.id});
+    console.log(taskToUpdate);
+
+
   } catch (err) {
     console.log(err);
   }
