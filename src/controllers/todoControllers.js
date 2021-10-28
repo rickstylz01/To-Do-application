@@ -49,6 +49,7 @@ exports.deleteTask = async (req, res) => {
   }
 }
 
+// Fetch task to update by id
 exports.findTaskToUpdate = async (req, res) => {
   try {
     let taskToUpdate = await Todo.findOne({_id: req.params.id});
@@ -58,6 +59,22 @@ exports.findTaskToUpdate = async (req, res) => {
     }
 
     res.status(200).render('edit.ejs', {todo: taskToUpdate});
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+// Update found task
+exports.updateTask = async (req, res) => {
+  try {
+    const task = req.body;
+    console.log(task);
+
+    const updatedTodo = await Todo.updateOne({_id: req.params.id}, task, {new: true});
+
+    console.log(updatedTodo);
+
+    res.redirect('/todos');
   } catch (err) {
     console.log(err);
   }
