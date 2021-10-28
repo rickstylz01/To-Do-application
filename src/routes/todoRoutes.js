@@ -8,9 +8,9 @@ router.get('/todos', TodoController.fetchTasks);
 router.post('/todos', TodoController.createNewTask);
 
 // GET route to delete a tasks
-router.get('/todo/:_id/delete', TodoController.deleteTask);
+router.get('/todo/:id/delete', TodoController.deleteTask);
 
-// POST route to update a task
-router.get('/todo/:_id/edit', TodoController.updateTask);
+// POST route to find task to edit
+router.get('/todo/:id/edit', TodoController.findTaskToUpdate);
 
 module.exports = router;

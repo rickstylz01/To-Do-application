@@ -17,7 +17,6 @@ exports.fetchTasks = async (req, res) => {
 // Creates a new task
 exports.createNewTask = async (req, res) => {
   try {
-    console.log(req.body);
     const {todo} = req.body;
     const newTodo = await new Todo({
       todo
@@ -39,7 +38,9 @@ exports.createNewTask = async (req, res) => {
 exports.deleteTask = async (req, res) => {
   try{
     const {_id} = req.params;
-    //TODO: find a way to log out the actual task that has been deleted.
+
+    //TODO: find a way to log out the task body that has been deleted.
+
     await Todo.deleteOne({_id});
     console.log(`Task has been deleted`);
     res.redirect('/todos');
@@ -48,12 +49,15 @@ exports.deleteTask = async (req, res) => {
   }
 }
 
-exports.updateTask = async (req, res) => {
+exports.findTaskToUpdate = async (req, res) => {
   try {
-    let taskToUpdate = Todo.find({_id: req.params.id});
-    console.log(taskToUpdate);
+    let taskToUpdate = await Todo.findOne({_id: req.params.id});
 
+    if (!taskToUpdate) {
+      return res.status(404).json({message: "todo not found"});
+    }
 
+    res.status(200).render('edit.ejs', {todo: taskToUpdate});
   } catch (err) {
     console.log(err);
   }
