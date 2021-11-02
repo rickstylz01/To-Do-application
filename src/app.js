@@ -6,6 +6,8 @@ const app = express();
 const PORT = process.env.PORT||3000;
 const indexRoute = require('./routes/todoRoutes');
 
+
+
 // =======================================================
 //  MONGO DB CONNECTION
 // =======================================================
@@ -26,6 +28,12 @@ app.set('views', path.join(__dirname, 'views'));
 // Set view engine as EJS
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+
+// =======================================================
+//  MIDDLEWARE
+// =======================================================
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // =======================================================
 //  ROUTES

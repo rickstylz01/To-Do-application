@@ -1,0 +1,8 @@
+<div class="todo todo-edit">
+    <h1>Edit Task: <%= todo.todo %></h1>
+    <form action="/todos/<%=todo._id%>" class="d-flex" method="POST">
+
+        <input type="text" name="todo" class="form-control" value="<%= todo.todo %>">
+        <input type="submit" value="Update" class="btn btn-md btn-primary mx-3">
+    </form>
+</div>

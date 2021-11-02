@@ -2,11 +2,12 @@ const mongoose = require('mongoose');
 const Todoschema = new mongoose.Schema({
   todo: {
     type: String,
-    required: true,
+    required: true
   },
   done: {
-    type: String,
+    type: Boolean,
     required: true,
+    default: false
   }
 });
 
