@@ -43,12 +43,11 @@
         <% todos.forEach(todo=>{ %>
             <li class="list-group-item hov libasic <%= todo.done ? 'done' : '' %>">
                 <%= todo.todo %>
-                <%= todo._id %>
 
                 <span>
-                    <a href="/todo/<%=todo._id%>/completed" class="btn btn-success btn-small" style="margin-right:0px">Done</a>
-                    <a href="/todo/<%=todo._id%>/edit" class="btn btn-danger btn-small">Edit</a>
-                    <a href="/todo/<%=todo._id%>/delete" class="btn btn-danger btn-small">Delete</a>
+                    <a href="/todos/<%=todo._id%>/completed" class="btn btn-success btn-small" style="margin-right:0px">Done</a>
+                    <a href="/todos/<%=todo._id%>/edit" class="btn btn-danger btn-small">Edit</a>
+                    <a href="/todos/<%=todo._id%>/delete" class="btn btn-danger btn-small">Delete</a>
                 </span>
             </li>
         <% }) %>
