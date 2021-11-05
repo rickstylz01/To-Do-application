@@ -24,9 +24,14 @@ This will allow you to use *npm run dev* command to in your console or terminal 
 I like to keep all my folders organized and inside a **src** folder.  The structure goes as follows:
 - src
   - controllers
+    - todoControllers.js
   - models
+    - todoSchema.js
   - routes
+    - todoRoutes.js
   - views
+    - edit.ejs
+    - index.ejs
 
 
 ## What was the motivation for this project?
