@@ -12,7 +12,7 @@ The rest of the settings I left as default and pretty much skipped to "Cluster N
 
 Once you create your cluster, head to the "Network access tab".
 Next, for the "Whitelist IP" tab, add an ip address.
-![network access tab](./desktop/network-access)
+![network access tab](/Users/slickrick/desktop/network-access)
 
 Once you have set up your MongoDB Cluster you can move on to the first step of the projects initialization.
 
