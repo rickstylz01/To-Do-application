@@ -1,28 +1,29 @@
 # soloNodeTodo
-This is a simple Todo application that let's you create, edit, delete, and mark task's as *done*.  I just completed my 7-month Reskill Americans program.  I was in the back-end developer track of the program in which I learned processes like how to use what I dub the **MEEN STACK** which stands for Mongoose, ExpressJS, EJS, and NodeJS. This was a more challangeing task than I thought especially because I decided to plan and execute it on my own using the knowledge I gained from the RA program.  It is not quite finished yet, I plan to implement some sort of authentication/authorization.
+This is a simple Todo application that let's you create, edit, delete, and mark task's as *done*.  I used **MongoDb** to create a database and **Mongoose** for the purposes of being able to define the schema for the documents in that particular collection. I was in the back-end developer track of a 7-month program in which I learned processes like how to use what I dub the **MEEN STACK** which stands for Mongoose, ExpressJS, EJS, and NodeJS. This task, of creating a simple todo application, was more challangeing than I originally thought especially because I decided to plan and execute it on my own using the knowledge I gained from the Reskill Americans program.  It is not quite finished yet, I plan to implement some sort of authentication/authorization in the future.
+
+## PREREQUISITE
+### MongoDB
+I am using [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) and have downloaded it locally which allows me to also use [MongoDB Compass](https://www.mongodb.com/products/compass).  It is free, no credit card is required. It is a pretty simple setup just follow the instructions in order to build a cluster. It is a NoSQL datbase.  It allows you to have a deployment in the cloud so you don't have to have it in your machine. 
+
+### MongoDB Setup - Step 1
+For a *cloud provider* I chose AWS and then free option for "shared clusters." 
+
+The rest of the settings I left as default and pretty much skipped to "Cluster Name". Choose a name for your cluster as you see fit.
+
+Once you create your cluster, head to the "Network access tab"
+![network access tab](Screen Shot 2021-11-05 at 4.50.26 PM)
+
+ 
+
+Once you have set up your MongoDB Cluster you can move on to the first step of the projects initialization.
+
 
 ## STEP 1: Initialize the project
-If you do not have [NodeJS](https://nodejs.org/en/download/) or [MongoDB](https://www.mongodb.com/cloud/atlas/lp/try2?utm_content=rlsavisitor&utm_source=google&utm_campaign=gs_americas_uscan_search_brand_atlas_desktop_rlsa&utm_term=install%20mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=14291004602&adgroup=128837428507&gclid=Cj0KCQjwrJOMBhCZARIsAGEd4VG26oconcY89Zc4Px85yCfjbujv8Z17hIQmrTpZtaP_XSrKMBqzwV4aAl_iEALw_wcB) installed or are unfamiliar with either,  Maker sure to research and get familiar with both.  I will not be going over the basic fundamentals of these.
-
-Once these are installed and configured make sure to create a new folder with your desired "app name" and open the folder with any IDE or text editor you prefer and run the following code in the command line.
+Make sure to create a new folder with your desired "app name" and open the folder with any IDE or text editor you prefer and run the following code in the command line.
 
 **npm init**
 
-## STEP 2: Setting up the folder structure
-I like to keep all my folders organized and inside a **src** folder.  The structure goes as follows:
-- src
-  - controllers
-    - todoControllers.js
-  - models
-    - todoSchema.js
-  - routes
-    - todoRoutes.js
-  - views
-    - edit.ejs
-    - index.ejs
-  - app.js
-
-## STEP 3: What you need to install 
+## STEP 2: What you need to install 
 - [body-parcer](https://www.npmjs.com/package/body-parser)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [ejs](https://www.npmjs.com/package/ejs)
@@ -31,13 +32,7 @@ I like to keep all my folders organized and inside a **src** folder.  The struct
 *mongoose requires a connection to a MongoDB database*
 - [nodemon](https://www.npmjs.com/package/nodemon)
 
-To install these packages, in your command line, run the command **npm install *package-name*** or **npm i *package-name*** as a shorthand.  For a faster result, you can use all of the package names in one command for installation.
-
-```
-npm i body-parcer dotenv ejs express mongoose 
-```
-
-For *nodemon* use the command **npm i -D nodemon**. This installs nodemon as a development dependency.  **nodemon** will restart the server automatically when any change is detected.
+To install these packages, in your command line, run the command **npm install** or **npm i** as a shorthand. 
 
 Once all the packages have been installed you can run the application using this command:
 ```
