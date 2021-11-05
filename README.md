@@ -7,6 +7,7 @@ This is a simple Todo application that let's you create, edit, delete, and mark 
 - [ejs](https://www.npmjs.com/package/ejs)
 - [express](https://www.npmjs.com/package/express)
 - [mongoose](https://www.npmjs.com/package/mongoose)
+*mongodb is installed along with the mongoose package*
 - [nodemon](https://www.npmjs.com/package/nodemon)
 
 ## STEP 1: Initialize the project
