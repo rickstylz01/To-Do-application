@@ -1,7 +1,7 @@
 # soloNodeTodo
 This is a simple Todo application that let's you create, edit, delete, and mark task's as *done*.  I just completed my 7-month Reskill Americans program.  I was in the back-end developer track of the program in which I learned processes like how to use what I dub the **MEEN STACK** which stands for Mongoose, ExpressJS, EJS, and NodeJS. This was a more challangeing task than I thought especially because I decided to plan and execute it on my own using the knowledge I gained from the RA program.  It is not quite finished yet, I plan to implement some sort of authentication/authorization.
 
-I used a few npm packages like:
+## Dependancies 
 - [body-parcer](https://www.npmjs.com/package/body-parser)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [ejs](https://www.npmjs.com/package/ejs)
