@@ -5,17 +5,40 @@ This is a simple Todo application that let's you create, edit, delete, and mark 
 ### MongoDB
 I am using [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) and have downloaded it locally which allows me to also use [MongoDB Compass](https://www.mongodb.com/products/compass).  It is free, no credit card is required. It is a pretty simple setup just follow the instructions in order to build a cluster. It is a NoSQL datbase.  It allows you to have a deployment in the cloud so you don't have to have it in your machine. 
 
-### MongoDB Setup - Step 1
+### MongoDB Setup 
 For a *cloud provider* I chose AWS and then free option for "shared clusters." 
 
 The rest of the settings I left as default and pretty much skipped to "Cluster Name". Choose a name for your cluster as you see fit.
 
 Once you create your cluster, head to the "Network access tab".
+![network access tab](src/public/images/network-access.png)
+
 Next, for the "Whitelist IP" tab, add an ip address.
-![network access tab](/Users/slickrick/desktop/network-access)
+![network access tab](src/public/images/white-list.png)
+
+Select the "Allow access from anywhere".  This will allow you to access the cluster from anywhere simply by using your username and password.  This will allow us to connect our cluster to the MongoDB Atlas GUI.
+![network access tab](src/public/images/add-white-ip.png)
+
+Now back in the SECURITY, select the DATABASE ACCESS tab. You're going to add a username and password. Select ATLAS ADMIN and add the user
+![network access tab](src/public/images/add-new-database-user.png)
+
+Next, select the Data Storage tab.
+
+![network access tab](src/public/images/data-storage.png)
+
+In that cluster, hit the "Connect" button. When the window pops up select "Connect using MongoDB Compass"
+![network access tab](src/public/images/connect-with-compas.png)
+
+After clicking that another window will pop up where you will select the option, "I have MongoDB Compass". Then copy the link provided.
+![network access tab](src/public/images/I-have-compass.png)
+
+Open your MongoDB Compass GUI and place in the link and make sure to change the username and password to what you placed in "Allow access" step of the setup. Finally hit the "Connect" button and you should be set up to access your data throught the compass gui.
+![network access tab](src/public/images/compass-gui.png)
+
+You should see something like this once your setup is complete:
+![network access tab](src/public/images/compass-connected.png)
 
 Once you have set up your MongoDB Cluster you can move on to the first step of the projects initialization.
-
 
 ## STEP 1: Initialize the project
 Make sure to create a new folder with your desired "app name" and open the folder with any IDE or text editor you prefer and run the following code in the command line.
