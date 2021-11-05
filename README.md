@@ -10,10 +10,9 @@ For a *cloud provider* I chose AWS and then free option for "shared clusters."
 
 The rest of the settings I left as default and pretty much skipped to "Cluster Name". Choose a name for your cluster as you see fit.
 
-Once you create your cluster, head to the "Network access tab"
-![network access tab](Screen Shot 2021-11-05 at 4.50.26 PM)
-
- 
+Once you create your cluster, head to the "Network access tab".
+Next, for the "Whitelist IP" tab, add an ip address.
+![network access tab](desktop/network-access)
 
 Once you have set up your MongoDB Cluster you can move on to the first step of the projects initialization.
 
