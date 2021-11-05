@@ -38,6 +38,8 @@ Open your MongoDB Compass GUI and place in the link and make sure to change the 
 You should see something like this once your setup is complete:
 ![network access tab](src/public/images/compass-connected.png)
 
+This will all come into play once we set up the .env file.  Specifically for the MONGOURI.
+
 Once you have set up your MongoDB Cluster you can move on to the first step of the projects initialization.
 
 ## STEP 1: Initialize the project
@@ -78,7 +80,10 @@ The setup should look something like this:
 MONGO_URI=MONGODBCOLLECTIONURI
 PORT=PORTNUMBER
 ```
-
+The uri should look similar to this
+```
+mongodb://localhost:<localhostnumber>/soloNodeTodo
+```
 ### File: app.js
 
 Import the necessary modules.
