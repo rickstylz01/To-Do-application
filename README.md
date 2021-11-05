@@ -1,7 +1,10 @@
 # soloNodeTodo
 This is a simple Todo application that let's you create, edit, delete, and mark task's as *done*.  I just completed my 7-month Reskill Americans program.  I was in the back-end developer track of the program in which I learned processes like how to use what I dub the **MEEN STACK** which stands for Mongoose, ExpressJS, EJS, and NodeJS. This was a more challangeing task than I thought especially because I decided to plan and execute it on my own using the knowledge I gained from the RA program.  It is not quite finished yet, I plan to implement some sort of authentication/authorization.
 
-## Dependancies 
+## STEP 1: Initialize the project
+**npm init**
+
+## STEP 2: What you need to install 
 - [body-parcer](https://www.npmjs.com/package/body-parser)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [ejs](https://www.npmjs.com/package/ejs)
@@ -10,15 +13,21 @@ This is a simple Todo application that let's you create, edit, delete, and mark 
 *mongoose requires a connection to a MongoDB database*
 - [nodemon](https://www.npmjs.com/package/nodemon)
 
-## STEP 1: Initialize the project
-**npm init**
-
-## STEP 2: configuring nodemon
-Once the nodemon package is installed, change the *start* & *dev* scripts in the package.json file to
+## STEP 3: Configuring nodemon
+Once the nodemon package is installed, in the package.json file, change the *start* & *dev* scripts 
 - *"start": "node src/app.js"*
 - *"dev": "nodemon src/app.js"*
 
-Afterwards use *npm run dev* command to run the application.
+This will allow you to use *npm run dev* command to in your console or terminal to run the application.
+
+## STEP 4: Setting up folder structure
+I like to keep all my folders organized and inside a **src** folder.  The structure goes as follows:
+- src
+  - controllers
+  - models
+  - routes
+  - views
+
 
 ## What was the motivation for this project?
 My motivation for this project was to put my knowledge of using the MEEN (Mongoose, Express, EJS, NodeJS) stack to use.  I wanted to build something simple and practical that can show my understanding in the use of these different programming tools.
