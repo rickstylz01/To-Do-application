@@ -30,14 +30,14 @@ I like to keep all my folders organized and inside a **src** folder.  The struct
 - [mongoose](https://www.npmjs.com/package/mongoose) -
 *mongoose requires a connection to a MongoDB database*
 - [nodemon](https://www.npmjs.com/package/nodemon)
-- 
+
 To install these packages, in your command line, run the command **npm install *package-name*** or **npm i *package-name*** as a shorthand.  For a faster result, you can use all of the package names in one command for installation.
 
 ```
 npm i body-parcer dotenv ejs express mongoose 
 ```
 
-For *nodemon* use the command **npm i -D nodemon**. This install nodemon as a development dependency.  **nodemon** will restart the server automatically when any change is detected.
+For *nodemon* use the command **npm i -D nodemon**. This installs nodemon as a development dependency.  **nodemon** will restart the server automatically when any change is detected.
 
 Once all the packages have been installed you can run the application using this command:
 ```
