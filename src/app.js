@@ -1,7 +1,12 @@
 require("dotenv").config();
+require('./config/passport')(passport);
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const path = require('path');
+
 const app = express();
 const PORT = process.env.PORT||3000;
 const indexRoute = require('./routes/todoRoutes');
