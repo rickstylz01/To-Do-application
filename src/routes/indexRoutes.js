@@ -4,6 +4,6 @@ const IndexController = require('../controllers/indexControllers');
 
 router.get('/', IndexController.fetchLoginPage);
 
-router.get("/log", IndexController.fetchLandingPage);
+router.get('/log', IndexController.fetchLandingPage);
 
 module.exports = router;
