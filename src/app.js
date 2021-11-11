@@ -1,17 +1,15 @@
 require("dotenv").config();
-require('./config/passport')(passport);
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const path = require('path');
+const indexRoute = require('./routes/todoRoutes');
+const authRoute = require('./routes/authRoutes');
 
 const app = express();
 const PORT = process.env.PORT||3000;
-const indexRoute = require('./routes/todoRoutes');
-
-
 
 // =======================================================
 //  MONGO DB CONNECTION
@@ -20,6 +18,11 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser:true,
   useUnifiedTopology: true
 });
+
+// =======================================================
+//  PASSPORT CONFIG
+// =======================================================
+require('./config/passport')(passport);
 
 // =======================================================
 //  EJS
@@ -43,10 +46,25 @@ app.use(express.urlencoded({ extended: true }));
 // =======================================================
 //  ROUTES
 // =======================================================
+app.use(authRoute);
 app.use(indexRoute);
 
+// =======================================================
+//  SESSION CONFIG
+// =======================================================
+app.use(
+  session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection})
+  })
+);
 
-
-
+// =======================================================
+//  PASSPORT MIDDLEWARE
+// =======================================================
+app.use(passport.initialize);
+app.use(passport.session);
 
 app.listen(PORT, () => console.log(`listening at ${PORT}`));
